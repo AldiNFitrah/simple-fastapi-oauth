@@ -86,6 +86,7 @@ def __generate_token():
 def get_user_by_token(access_token):
     data = copy.deepcopy(db_access_token.get(access_token))
     if not is_access_token_valid(data):
+        db_access_token.pop(access_token)
         return None
 
     user = get_user_by_username(data["username"])
@@ -93,6 +94,7 @@ def get_user_by_token(access_token):
     user_id = user["id"]
     user.pop("id")
     user.pop("password")
+    user.pop("username")
 
     return {
         **user,
