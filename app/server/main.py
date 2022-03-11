@@ -5,7 +5,7 @@ from fastapi import Response
 from fastapi import status
 from typing import Optional
 
-from database.constants import K_TOKEN_LIFE_TIME
+from app.database.constants import K_TOKEN_LIFE_TIME
 from models.User import User
 from service import auth
 
