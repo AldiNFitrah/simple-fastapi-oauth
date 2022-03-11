@@ -31,6 +31,7 @@ def register(username, password, full_name, npm):
 
     return user
 
+
 def get_user_by_username(username):
     return copy.deepcopy(db_user.get(username))
 
@@ -100,6 +101,7 @@ def get_user_by_token(access_token):
         "client_id": data["client_id"],
         "refresh_token": data["refresh_token"],
     }
+
 
 def is_access_token_valid(access_token_data):
     if access_token_data is None:

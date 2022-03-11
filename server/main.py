@@ -66,6 +66,7 @@ async def login(
         "refresh_token": refresh_token,
     }
 
+
 @app.post("/oauth/resource", status_code=status.HTTP_200_OK)
 async def resource(
     response: Response,
